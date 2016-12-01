@@ -42,10 +42,17 @@
 
 #include <stdio.h>
 #include <xs1.h>
-//#include <dsp.h>
-#include <lib_dsp.h>
+#include <dsp.h>
+//#include <lib_dsp.h>
 #include<string.h>
+#include <stdint.h>
+#include <xclib.h>
+
+#define RIGHT_SHIFT 1
+#define N_FFT_POINTS 8
+#define INPUT_FREQ N_FFT_POINTS/8
 
 void app_fft_old();
+void app_fft_new();
 
 #endif /* FFT_H_ */

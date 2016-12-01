@@ -40,7 +40,9 @@
 
 int main()
 {
-    app_fft_old();
+//    app_fft_old();
+
+    app_fft_new();
 
     return 0;
 }
