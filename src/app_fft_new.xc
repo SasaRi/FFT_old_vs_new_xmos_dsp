@@ -104,7 +104,7 @@ void app_fft_new()
 
         dsp_fft_bit_reverse(data, N_FFT_POINTS);
         dsp_fft_forward(data, N_FFT_POINTS, FFT_SINE(N_FFT_POINTS));
-//        dsp_fft_split_spectrum(data, N_FFT_POINTS);
+        dsp_fft_split_spectrum(data, N_FFT_POINTS);
 
         // Print forward complex FFT results
         //printf( "First half of Complex FFT output spectrum of Real signal 0 (cosine):\n");
@@ -116,10 +116,9 @@ void app_fft_new()
             printf( "%.10f, %.10f\n", F30(data[i].re), F30(data[i].im));
         }
 
-
-
-        dsp_fft_bit_reverse(data, N_FFT_POINTS);
+        dsp_fft_merge_spectra(data, N_FFT_POINTS);
         dsp_fft_inverse(data, N_FFT_POINTS, FFT_SINE(N_FFT_POINTS));
+        dsp_fft_split_spectrum(data, N_FFT_POINTS);
 
         printf( "////// Time domain signal after dsp_fft_inverse\n");
         printf("re,           im         \n");
